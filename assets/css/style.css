@@ -1,0 +1,288 @@
+/* At the top of the stylesheet we start with our base styles and properties */
+body {
+  /* Montserrat is the font I embedded on line 14 of index.html.
+  To use it, I need to enter it in my stylesheet somewhere.
+  font-family property reads fonts left-to-right. If the first
+  font isn't available, it goes to the next, and so on.
+  Not every computer has the same fonts. So you want to start with
+  your preferred and get more general as you go. Ending with the
+  TYPE of font you want shown if none of the specific named ones
+  are not available */
+  /* This website has a list of web-safe fonts:
+  http://www.w3schools.com/cssref/css_websafe_fonts.asp */
+  font-family: 'Montserrat', 'Helvetica Neue', Helvetica, sans-serif;
+  font-size: 18px;
+  color: #777; /* color property is not the same as background-color */
+  line-height: 34px; /* For the line height of text */
+  /* The background location is a relative path. It is relative to
+  THIS FILE and NOT the HTML file which this is linked to. */
+  background: url("../images/concrete_seamless.png");
+}
+
+/* This is a CSS selector which "selects" all elements */
+/* More about CSS selectors here: http://www.w3schools.com/cssref/css_selectors.asp */
+* {
+  /* box-sizing tells the browser what to take into account when figuring out the size of something.
+  content-box (the default) includes only content.
+  Border, padding, or margin are not included.
+  border-box (what we've selected) includes content,
+  padding, and border, but not the margin. */
+  box-sizing: border-box;
+}
+
+
+/* This next section contains general styles for a handful of items we're going to use often */
+/* This general container class is used three times on each page.
+So I've said I want the three main containers on this website to all have the following:
+clear both sides, centered (margin:0 auto), I want it to take up 100% of available width but only ever get
+to a max-width of 960px */
+.container {
+  clear: both;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 960px;
+}
+/* For the main text styles I'm going to use, I want to give them bottom margins.
+This way when I add bodies of text, they automatically space themselves out nicely */
+h1,h2,h3,p{
+  margin-bottom: 20px;
+}
+/* A catch to what's right above.
+I want every body of text to have this margin to space things out,
+but the last time <p> appears as a child element of its parent,
+don't add a margin. Because it's the last one, so we don't need that space. */
+p:last-child {
+  margin-bottom: 0;
+}
+
+/* Grouping elements together for more efficient coding */
+/* Also if you want to change the color, now you
+only have to do it once, versus remembering to change it in
+three places */
+h1,h2,h3 {
+  color: #e4c0b2;
+  font-weight: 700;
+}
+
+h1 {
+  padding-bottom: 20px;
+  font-size: 30px;
+  line-height: 49px;
+  border-bottom: 3px solid #ddd;
+}
+
+h2,h3 {
+  font-size: 22px;
+}
+
+
+/*header*/
+
+#masthead {
+  position: fixed;
+  z-index: 99;
+  margin: 0 0 30px;
+  overflow: auto;
+  width: 100%;
+  color: #fff;
+  background: #fff;
+  border-bottom: 2px solid #ccc;
+}
+
+#logo {
+  width: 250px;
+  height: 90px;
+  float: left;
+  text-align: center;
+  line-height: 90px;
+  color: #fff;
+  font-weight: 700;
+  font-size: 30px;
+  text-decoration: none;
+  background: #e4c0b2;
+}
+
+nav {
+  float: right;
+  margin-top: 25px;
+}
+
+nav a {
+  display: inline-block;
+  margin-left: 15px;
+  padding-left: 15px;
+  color: #999;
+  text-decoration: none;
+  line-height: 18px;
+  border-left: 1px solid #efefef;
+}
+
+nav a:first-child {
+  border-left: 0 none;
+}
+
+
+/*footer*/
+
+footer {
+  padding: 30px 0;
+  clear: both;
+  color: #fff;
+  color: #ccc;
+  font-size: 12px;
+  text-align: center;
+  background: #666;
+  border-top: 8px solid #e4c0b2;
+}
+
+
+/*sidebar*/
+
+.sidebar {
+  padding: 30px;
+  width: 100%;
+  max-width: 270px;
+  float: right;
+  margin-bottom: 20px;
+  background: #fff;
+  border: 1px solid #ddd;
+}
+
+h3,
+.sidebar h2 {
+  padding-bottom: 20px;
+  margin-bottom: 15px;
+  line-height: 22px;
+  border-bottom: 2px solid #eee;
+}
+
+.social {
+  width: 62px;
+  height: 62px;
+  margin-top: 8px;
+  margin-right: 5px;
+}
+
+.social:last-child {
+  margin-right: 0;
+}
+
+
+/*main*/
+
+#main-container {
+  padding-top: 130px;
+}
+
+.main-section {
+  padding: 30px;
+  margin: 0 0 40px 0;
+  width: 100%;
+  max-width: 650px;
+  float: left;
+  background: #fff;
+  border: 1px solid #ddd;
+}
+
+
+/*portfolio page*/
+
+.work {
+  position: relative;
+  width: 274px;
+  overflow: auto;
+  float: left;
+  margin: 20px 0 25px;
+}
+
+.work:nth-child(even) {
+  margin-right: 40px;
+}
+
+.work img {
+  width: 100%;
+  border: 0 none;
+  opacity: .8;
+}
+
+.work h3 {
+  position: absolute;
+  bottom: 20px;
+  margin-bottom: 0;
+  padding: 15px;
+  width: 100%;
+  color: #fff;
+  text-align: center;
+  line-height: 30px;
+  font-weight: 300;
+  background: #e4c0b2;
+  border-bottom: 0;
+}
+
+.auth-image {
+  width: 200px;
+  height: auto;
+  margin-top: 10px;
+  margin-right: 25px;
+  float: left;
+}
+
+
+/*contact page*/
+
+#contact-form ul {
+  margin-bottom: 20px;
+}
+
+#contact-form li {
+  margin-bottom: 10px;
+}
+
+label,
+input[type=text],
+input[type=email],
+textarea {
+  display: block;
+  width: 100%;
+}
+
+input[type=text],
+input[type=email],
+textarea {
+  height: 35px;
+  padding: 0 10px;
+  font-size: 14px;
+  border: 1px solid #ddd;
+}
+
+textarea {
+  height: 200px;
+}
+
+input[type=submit] {
+  padding: 10px 30px;
+  color: #fff;
+  font-size: 18px;
+  cursor: pointer;
+  background: #e4c0b2;
+  border: 0 none;
+}
+
+.sidebar::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+[class*="col-"] {
+    float: left;
+    padding: 15px;
+}
+
+
+@media only screen and (max-width: 640px) {
+    
+    
+}
+@media only screen and (max-width: 768px) {
+   
+}

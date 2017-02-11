@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en-us">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About | Maria Gabriela Cortez</title>
+  <!-- reset.css - This will normalize basic CSS settings so that you get a clean slate on different browsers -->
+  <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+  <!-- style.css - Custom stylesheet for this website -->
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+  <!-- Google Fonts - NOT REQUIRED FOR THE HOMEWORK - I wanted to jazz up the site with a different font so I added the embed link. Just like Font Awesome, these are pre-made CSS stylesheets that do fun things for us so we don't have to code them by hand -->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+</head>
+
+<!-- Always start out with the <body> tag -->
+<body>
+  <!-- Here is the header and navigation bar -->
+  <!-- First, we create a container for all the header elements. By holding them in a container we can style them more efficiently -->
+  <!-- Although we created the header's container using <header id="masthead"> we could have also used <div id="masthead">. <header> is a newer tag and is just a little more specific. But <div> would have still worked. -->
+  <header id="masthead">
+    <!-- Next we have another container. This container style is written to be more general in its properties and therefore we can use it multiple times to help us achieve more efficient code and keep things more uniform -->
+    <div class="container">
+      <!-- Now that we've made our container structure for our header, we can have fun with content -->
+      <!-- <a href=""> creates a link. We gave it an id so that way we can stylize it later without stylizing every single link in the project -->
+      <a href="index.html" id="logo">Maria Gabriela Cortez</a>
+      <!-- For our navigation bar we use <nav> as a container and put <a> links inside -->
+      <nav>
+        <!-- These links use relative paths. So the browser is going to look for those files relative to the file that is currently up. -->
+        <a href="about.html">About</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="contact.html">Contact</a>
+      </nav><!-- nav -->
+    </div><!-- .container -->
+  </header><!-- #masthead -->
+
+  <!-- Now that our header is done and contained nicely, let's make a container for the real star of the website - our content! -->
+  <!-- The container <div> for our content has both an id AND a class. That means it is referencing the #main-container style in addition to .container style (which we used above in the header) -->
+  <!-- By seperating the id and class, we can continue to apply the same, uniform properties with .container but also add styles specifically for this main container with #main-container -->
+  <div id="main-container" class="container">
+    <!-- Kinda like <header>, <section> is a newer HTML tag which helps with clarity. However, <div> could have been used too with the same result -->
+    <!-- Now we create our first child section of the main-container -->
+    <section class="main-section">
+      <!-- Inside our first child section we can just insert our content and do our positioning and styling in CSS -->
+      <h1>About me</h1>
+
+      <img src="assets/images/weirdanimal.jpg" class="auth-image" alt="This alt text is good for screen readers, SEO, and a caption on hover">
+
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse bibendum finibus semper. Sed laoreet ultricies tellus, eu bibendum tortor consequat et.</p>
+
+      <p>ILorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse bibendum finibus semper. Sed laoreet ultricies tellus, eu bibendum tortor consequat et. Nullam pharetra imperdiet cursus. Nulla facilisi. Curabitur rutrum, leo sit amet congue vehicula, diam elit ornare nisl, vitae rhoncus enim libero a ante. Nunc elementum quis enim eu volutpat. Sed in hendrerit lectus. Aenean eget laoreet ipsum, non mattis orci. Fusce lacinia mattis turpis, eget ullamcorper neque pretium at. Duis tincidunt interdum eleifend. Pellentesque pharetra sem et maximus aliquet. Suspendisse id lorem nunc. </p>
+
+    </section><!-- .main-section -->
+
+    <!-- Our sidebar needs its own container too. So while still in the #main-container container, we create another <section> and give it its own class -->
+    <section class="sidebar">
+      <!-- This <div> doesn't have any styles added to it  -->
+      <div id="connect">
+        <h2>Connect with me</h2>
+
+        <!-- in each of our <img> tags we've added a class called "social". This way we can apply one set of properties to all three of these images -->
+        <a href="https://github.com/mgcortez"><img src="assets/images/github-128.png" class="social" alt="GitHub" /></a>
+        <a href="https://www.linkedin.com/in/maria-gabriela-cortez-160600137/"><img src="assets/images/linkedin-128.png" class="social" alt="LinkedIn" /></a>
+        <a href="https://www.instagram.com/hannahpatellis/"><img src="assets/images/instagram-128.png" class="social" alt="Instagram" /></a>
+      </div><!-- #connect -->
+    </section><!-- .sidebar -->
+  </div><!-- #main-container -->
+
+  <footer>
+    <div class="container">
+      Copyright &copy; 2017 Maria Gabriela Cortez
+    </div>
+  </footer>
+</body>
+</html>
